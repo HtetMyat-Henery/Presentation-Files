@@ -1,0 +1,421 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0061)http://matthew-brett.github.io/pydagogue/git_gui_windows.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    
+    <title>Getting started with git gui on Windows — pydagogue 0.2 documentation</title>
+    
+    <link rel="stylesheet" href="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/traditional.css" type="text/css">
+    <link rel="stylesheet" href="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/pygments.css" type="text/css">
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.2',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/jquery.js.download"></script>
+    <script type="text/javascript" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/underscore.js.download"></script>
+    <script type="text/javascript" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/doctools.js.download"></script>
+    <script src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/MathJax.js.download" id=""></script>
+    <link rel="index" title="Index" href="http://matthew-brett.github.io/pydagogue/genindex.html">
+    <link rel="search" title="Search" href="http://matthew-brett.github.io/pydagogue/search.html">
+    <link rel="next" title="Deleting your master branch" href="http://matthew-brett.github.io/pydagogue/gh_delete_master.html">
+    <link rel="prev" title="Using vim as a mergetool in git" href="http://matthew-brett.github.io/pydagogue/vim_mergetool.html"> 
+  <link type="text/css" rel="stylesheet" href="chrome-extension://ekcknfleddaejiggabkjphpflidckbig/zg.css"><style type="text/css">.MathJax_Hover_Frame {border-radius: .25em; -webkit-border-radius: .25em; -moz-border-radius: .25em; -khtml-border-radius: .25em; box-shadow: 0px 0px 15px #83A; -webkit-box-shadow: 0px 0px 15px #83A; -moz-box-shadow: 0px 0px 15px #83A; -khtml-box-shadow: 0px 0px 15px #83A; border: 1px solid #A6D ! important; display: inline-block; position: absolute}
+.MathJax_Menu_Button .MathJax_Hover_Arrow {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px; font-family: 'Courier New',Courier; font-size: 9px; color: #F0F0F0}
+.MathJax_Menu_Button .MathJax_Hover_Arrow span {display: block; background-color: #AAA; border: 1px solid; border-radius: 3px; line-height: 0; padding: 4px}
+.MathJax_Hover_Arrow:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_Hover_Arrow:hover span {background-color: #CCC!important}
+</style><style type="text/css">#MathJax_About {position: fixed; left: 50%; width: auto; text-align: center; border: 3px outset; padding: 1em 2em; background-color: #DDDDDD; color: black; cursor: default; font-family: message-box; font-size: 120%; font-style: normal; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; border-radius: 15px; -webkit-border-radius: 15px; -moz-border-radius: 15px; -khtml-border-radius: 15px; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_About.MathJax_MousePost {outline: none}
+.MathJax_Menu {position: absolute; background-color: white; color: black; width: auto; padding: 2px; border: 1px solid #CCCCCC; margin: 0; cursor: default; font: menu; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; z-index: 201; box-shadow: 0px 10px 20px #808080; -webkit-box-shadow: 0px 10px 20px #808080; -moz-box-shadow: 0px 10px 20px #808080; -khtml-box-shadow: 0px 10px 20px #808080; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+.MathJax_MenuItem {padding: 2px 2em; background: transparent}
+.MathJax_MenuArrow {position: absolute; right: .5em; padding-top: .25em; color: #666666; font-size: .75em}
+.MathJax_MenuActive .MathJax_MenuArrow {color: white}
+.MathJax_MenuArrow.RTL {left: .5em; right: auto}
+.MathJax_MenuCheck {position: absolute; left: .7em}
+.MathJax_MenuCheck.RTL {right: .7em; left: auto}
+.MathJax_MenuRadioCheck {position: absolute; left: 1em}
+.MathJax_MenuRadioCheck.RTL {right: 1em; left: auto}
+.MathJax_MenuLabel {padding: 2px 2em 4px 1.33em; font-style: italic}
+.MathJax_MenuRule {border-top: 1px solid #CCCCCC; margin: 4px 1px 0px}
+.MathJax_MenuDisabled {color: GrayText}
+.MathJax_MenuActive {background-color: Highlight; color: HighlightText}
+.MathJax_MenuDisabled:focus, .MathJax_MenuLabel:focus {background-color: #E8E8E8}
+.MathJax_ContextMenu:focus {outline: none}
+.MathJax_ContextMenu .MathJax_MenuItem:focus {outline: none}
+#MathJax_AboutClose {top: .2em; right: .2em}
+.MathJax_Menu .MathJax_MenuClose {top: -10px; left: -10px}
+.MathJax_MenuClose {position: absolute; cursor: pointer; display: inline-block; border: 2px solid #AAA; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; font-family: 'Courier New',Courier; font-size: 24px; color: #F0F0F0}
+.MathJax_MenuClose span {display: block; background-color: #AAA; border: 1.5px solid; border-radius: 18px; -webkit-border-radius: 18px; -moz-border-radius: 18px; -khtml-border-radius: 18px; line-height: 0; padding: 8px 0 6px}
+.MathJax_MenuClose:hover {color: white!important; border: 2px solid #CCC!important}
+.MathJax_MenuClose:hover span {background-color: #CCC!important}
+.MathJax_MenuClose:hover:focus {outline: none}
+</style><style type="text/css">.MathJax_Preview .MJXf-math {color: inherit!important}
+</style><style type="text/css">.MJX_Assistive_MathML {position: absolute!important; top: 0; left: 0; clip: rect(1px, 1px, 1px, 1px); padding: 1px 0 0 0!important; border: 0!important; height: 1px!important; width: 1px!important; overflow: hidden!important; display: block!important; -webkit-touch-callout: none; -webkit-user-select: none; -khtml-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+.MJX_Assistive_MathML.MJX_Assistive_MathML_Block {width: 100%!important}
+</style><style type="text/css">#MathJax_Zoom {position: absolute; background-color: #F0F0F0; overflow: auto; display: block; z-index: 301; padding: .5em; border: 1px solid black; margin: 0; font-weight: normal; font-style: normal; text-align: left; text-indent: 0; text-transform: none; line-height: normal; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; -webkit-box-sizing: content-box; -moz-box-sizing: content-box; box-sizing: content-box; box-shadow: 5px 5px 15px #AAAAAA; -webkit-box-shadow: 5px 5px 15px #AAAAAA; -moz-box-shadow: 5px 5px 15px #AAAAAA; -khtml-box-shadow: 5px 5px 15px #AAAAAA; filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true')}
+#MathJax_ZoomOverlay {position: absolute; left: 0; top: 0; z-index: 300; display: inline-block; width: 100%; height: 100%; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+#MathJax_ZoomFrame {position: relative; display: inline-block; height: 0; width: 0}
+#MathJax_ZoomEventTrap {position: absolute; left: 0; top: 0; z-index: 302; display: inline-block; border: 0; padding: 0; margin: 0; background-color: white; opacity: 0; filter: alpha(opacity=0)}
+</style><style type="text/css">.MathJax_Preview {color: #888}
+#MathJax_Message {position: fixed; left: 1em; bottom: 1.5em; background-color: #E6E6E6; border: 1px solid #959595; margin: 0px; padding: 2px 8px; z-index: 102; color: black; font-size: 80%; width: auto; white-space: nowrap}
+#MathJax_MSIE_Frame {position: absolute; top: 0; left: 0; width: 0px; z-index: 101; border: 0px; margin: 0px; padding: 0px}
+.MathJax_Error {color: #CC0000; font-style: italic}
+</style><style type="text/css">.MJXp-script {font-size: .8em}
+.MJXp-right {-webkit-transform-origin: right; -moz-transform-origin: right; -ms-transform-origin: right; -o-transform-origin: right; transform-origin: right}
+.MJXp-bold {font-weight: bold}
+.MJXp-italic {font-style: italic}
+.MJXp-scr {font-family: MathJax_Script,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-frak {font-family: MathJax_Fraktur,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-sf {font-family: MathJax_SansSerif,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-cal {font-family: MathJax_Caligraphic,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-mono {font-family: MathJax_Typewriter,'Times New Roman',Times,STIXGeneral,serif}
+.MJXp-largeop {font-size: 150%}
+.MJXp-largeop.MJXp-int {vertical-align: -.2em}
+.MJXp-math {display: inline-block; line-height: 1.2; text-indent: 0; font-family: 'Times New Roman',Times,STIXGeneral,serif; white-space: nowrap; border-collapse: collapse}
+.MJXp-display {display: block; text-align: center; margin: 1em 0}
+.MJXp-math span {display: inline-block}
+.MJXp-box {display: block!important; text-align: center}
+.MJXp-box:after {content: " "}
+.MJXp-rule {display: block!important; margin-top: .1em}
+.MJXp-char {display: block!important}
+.MJXp-mo {margin: 0 .15em}
+.MJXp-mfrac {margin: 0 .125em; vertical-align: .25em}
+.MJXp-denom {display: inline-table!important; width: 100%}
+.MJXp-denom > * {display: table-row!important}
+.MJXp-surd {vertical-align: top}
+.MJXp-surd > * {display: block!important}
+.MJXp-script-box > *  {display: table!important; height: 50%}
+.MJXp-script-box > * > * {display: table-cell!important; vertical-align: top}
+.MJXp-script-box > *:last-child > * {vertical-align: bottom}
+.MJXp-script-box > * > * > * {display: block!important}
+.MJXp-mphantom {visibility: hidden}
+.MJXp-munderover {display: inline-table!important}
+.MJXp-over {display: inline-block!important; text-align: center}
+.MJXp-over > * {display: block!important}
+.MJXp-munderover > * {display: table-row!important}
+.MJXp-mtable {vertical-align: .25em; margin: 0 .125em}
+.MJXp-mtable > * {display: inline-table!important; vertical-align: middle}
+.MJXp-mtr {display: table-row!important}
+.MJXp-mtd {display: table-cell!important; text-align: center; padding: .5em 0 0 .5em}
+.MJXp-mtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-mlabeledtr {display: table-row!important}
+.MJXp-mlabeledtr > .MJXp-mtd:first-child {padding-left: 0}
+.MJXp-mlabeledtr:first-child > .MJXp-mtd {padding-top: 0}
+.MJXp-merror {background-color: #FFFF88; color: #CC0000; border: 1px solid #CC0000; padding: 1px 3px; font-style: normal; font-size: 90%}
+.MJXp-scale0 {-webkit-transform: scaleX(.0); -moz-transform: scaleX(.0); -ms-transform: scaleX(.0); -o-transform: scaleX(.0); transform: scaleX(.0)}
+.MJXp-scale1 {-webkit-transform: scaleX(.1); -moz-transform: scaleX(.1); -ms-transform: scaleX(.1); -o-transform: scaleX(.1); transform: scaleX(.1)}
+.MJXp-scale2 {-webkit-transform: scaleX(.2); -moz-transform: scaleX(.2); -ms-transform: scaleX(.2); -o-transform: scaleX(.2); transform: scaleX(.2)}
+.MJXp-scale3 {-webkit-transform: scaleX(.3); -moz-transform: scaleX(.3); -ms-transform: scaleX(.3); -o-transform: scaleX(.3); transform: scaleX(.3)}
+.MJXp-scale4 {-webkit-transform: scaleX(.4); -moz-transform: scaleX(.4); -ms-transform: scaleX(.4); -o-transform: scaleX(.4); transform: scaleX(.4)}
+.MJXp-scale5 {-webkit-transform: scaleX(.5); -moz-transform: scaleX(.5); -ms-transform: scaleX(.5); -o-transform: scaleX(.5); transform: scaleX(.5)}
+.MJXp-scale6 {-webkit-transform: scaleX(.6); -moz-transform: scaleX(.6); -ms-transform: scaleX(.6); -o-transform: scaleX(.6); transform: scaleX(.6)}
+.MJXp-scale7 {-webkit-transform: scaleX(.7); -moz-transform: scaleX(.7); -ms-transform: scaleX(.7); -o-transform: scaleX(.7); transform: scaleX(.7)}
+.MJXp-scale8 {-webkit-transform: scaleX(.8); -moz-transform: scaleX(.8); -ms-transform: scaleX(.8); -o-transform: scaleX(.8); transform: scaleX(.8)}
+.MJXp-scale9 {-webkit-transform: scaleX(.9); -moz-transform: scaleX(.9); -ms-transform: scaleX(.9); -o-transform: scaleX(.9); transform: scaleX(.9)}
+.MathJax_PHTML .noError {vertical-align: ; font-size: 90%; text-align: left; color: black; padding: 1px 3px; border: 1px solid}
+</style></head>
+  <body role="document"><div id="MathJax_Message" style="display: none;"></div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="http://matthew-brett.github.io/pydagogue/genindex.html" title="General Index" accesskey="I">index</a></li>
+        <li class="right">
+          <a href="http://matthew-brett.github.io/pydagogue/gh_delete_master.html" title="Deleting your master branch" accesskey="N">next</a> |</li>
+        <li class="right">
+          <a href="http://matthew-brett.github.io/pydagogue/vim_mergetool.html" title="Using vim as a mergetool in git" accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="http://matthew-brett.github.io/pydagogue/index.html">pydagogue 0.2 documentation</a> »</li>
+          <li class="nav-item nav-item-1"><a href="http://matthew-brett.github.io/pydagogue/git.html" accesskey="U">Notes and tutorials on git</a> »</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="getting-started-with-git-gui-on-windows">
+<h1>Getting started with git gui on Windows<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#getting-started-with-git-gui-on-windows" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="install-git-for-windows">
+<h2>Install git for Windows<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#install-git-for-windows" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Get a copy of the <a class="reference external" href="http://code.google.com/p/msysgit">msysgit</a> <code class="docutils literal"><span class="pre">.exe</span></code> installer</li>
+<li>Double click to install <a class="reference external" href="http://git-scm.com/">git</a> on your machine</li>
+<li>Accept all the defaults</li>
+</ul>
+</div>
+<div class="section" id="a-pretend-project">
+<h2>A pretend project<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#a-pretend-project" title="Permalink to this headline">¶</a></h2>
+<p>For simplicity, let us make a folder for our project in the <code class="docutils literal"><span class="pre">c:\</span></code> drive.</p>
+<ul class="simple">
+<li>Right click on the <code class="docutils literal"><span class="pre">C:\</span></code> drive in Windows Explorer, select “New folder”,
+name <code class="docutils literal"><span class="pre">my_idea</span></code></li>
+<li>Right click in <code class="docutils literal"><span class="pre">my_idea</span></code>, folder, select New file, of type “Text document”.
+Name it <code class="docutils literal"><span class="pre">good_idea.txt</span></code>.</li>
+<li>Open <code class="docutils literal"><span class="pre">good_idea.txt</span></code> and add some text like “This is my good idea”, and
+save.</li>
+</ul>
+</div>
+<div class="section" id="putting-the-project-into-version-control">
+<h2>Putting the project into version control<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#putting-the-project-into-version-control" title="Permalink to this headline">¶</a></h2>
+<p>Now we have a very small project, just a folder with a single file in it.  We’ll
+now put this folder into version control.</p>
+<div class="section" id="initializing-the-repository">
+<h3>Initializing the repository<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#initializing-the-repository" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p class="first">Right click in the <code class="docutils literal"><span class="pre">my_idea</span></code> folder, choose “Git Init Here” to initialize
+the git database:</p>
+<img alt="_images/git_init_rc.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/git_init_rc.png">
+</li>
+<li><p class="first">You may notice that there is now a hidden folder called <code class="docutils literal"><span class="pre">.git</span></code> in the <code class="docutils literal"><span class="pre">my_idea</span></code> folder.</p>
+<img alt="_images/dot_git_folder.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/dot_git_folder.png">
+<p>If you can’t see this hidden folder, you may need to change the folder viewing
+options.  From Windows XP explorer this is the “Tools” menu, then “Options”.
+You should enable viewing hidden folders in the “View” tab:</p>
+<img alt="_images/folder_options.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/folder_options.png">
+</li>
+</ul>
+</div>
+<div class="section" id="adding-stuff-to-the-repository">
+<h3>Adding stuff to the repository<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#adding-stuff-to-the-repository" title="Permalink to this headline">¶</a></h3>
+<p>Now we have a git database in our folder, we need to add our file.</p>
+<ul>
+<li><p class="first">Right click in the <code class="docutils literal"><span class="pre">my_idea</span></code> again, choose “Git Commit Tool”</p>
+<img alt="_images/git_gui_rc.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/git_gui_rc.png">
+</li>
+<li><p class="first">You will get a dialog like this:</p>
+<img alt="_images/first_commit_unstaged.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/first_commit_unstaged.png">
+<p>Notice that our file is at the top left, and is “Unstaged”.  That means that,
+at the moment, it is not going to be part of any “Commit” we do.  A commit is
+where we record changes into the database.  We do want to record our file, so</p>
+</li>
+<li><p class="first">Either click on the little icon to the left of the <code class="docutils literal"><span class="pre">good_idea.txt</span></code> filename
+in the dialog, or go to the “Commit” menu, “Stage to commit” option.  Notice
+the <code class="docutils literal"><span class="pre">good_idea.txt</span></code> file then goes to the “Staged changes (Will Commit)”
+section of the dialog.</p>
+<img alt="_images/first_commit_staged.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/first_commit_staged.png">
+</li>
+<li><p class="first">Add a message in the lower right box, like <code class="docutils literal"><span class="pre">The</span> <span class="pre">first</span> <span class="pre">signs</span> <span class="pre">of</span> <span class="pre">my</span> <span class="pre">idea</span></code>. The
+commit message is a reminder what set of changes the commit has.  It’s very
+useful to put meaningful messages here for quick reminders of what you
+intended with the changes.  Now click “Commit”.  Congratulations!</p>
+</li>
+</ul>
+</div>
+<div class="section" id="speak-with-your-own-voice">
+<h3>Speak with your own voice<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#speak-with-your-own-voice" title="Permalink to this headline">¶</a></h3>
+<p>Each commit has someone who wrote the contents of the commit - the “author”.  So
+you can get all the blame, and all the credit, you can identify yourself to git.
+That way git can see who’s doing the work (or doing the damage).</p>
+<ul>
+<li><p class="first">Right click in “my idea”, choose “Git Gui”.</p>
+</li>
+<li><p class="first">Click on the “Repository” menu and select “Visualize master’s history”:</p>
+<img alt="_images/gg_repository_menu.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/gg_repository_menu.png">
+</li>
+<li><p class="first">Notice that you are ‘Author: unknown’:</p>
+<img alt="_images/first_history.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/first_history.png">
+</li>
+<li><p class="first">Close the history window, right click and open ‘Git Gui’ again</p>
+</li>
+<li><p class="first">Go to menu Edit - Options.  Set your username and and email address in the <em>Right hand</em> panel (global options).</p>
+<img alt="_images/setting_self.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/setting_self.png">
+<p>Save.  Close.</p>
+</li>
+<li><p class="first">Let’s show ourselves that I have become myself.  Make a new file
+<code class="docutils literal"><span class="pre">another_idea.txt</span></code>. Start “Git Commit Tool” with a right click, stage the
+file by clicking on the icon next to the filename, add a message and the click
+commit.</p>
+</li>
+<li><p class="first">Open Git history from the Git Gui, choose the “Repository” menu, “Visualize master’s history”.
+Notice that you have two commits now, and the second one has your name on it.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="making-a-backup">
+<h2>Making a backup<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#making-a-backup" title="Permalink to this headline">¶</a></h2>
+<p>Now you have your changes backed up into your repository, but you will probably
+want to back up the repository somewhere.</p>
+<p>Let’s pretend to back the repository up to a shared drive (but in fact we’ll
+back up to the <code class="docutils literal"><span class="pre">C:\</span></code> drive).</p>
+<ul>
+<li><p class="first">Right click in the <code class="docutils literal"><span class="pre">my_idea</span></code> folder, chose “Git Gui”</p>
+</li>
+<li><p class="first">Choose menu “Remote”, “Add”:</p>
+<img alt="_images/initial_remote_add.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/initial_remote_add.png">
+</li>
+<li><p class="first">Give a name for your backup (no spaces) and a path to write the backup to.
+I like to add <code class="docutils literal"><span class="pre">.git</span></code> to the folder name for the backup, because this will be
+a backup with only the repository (the <code class="docutils literal"><span class="pre">.git</span></code> subfolder, but not the
+<code class="docutils literal"><span class="pre">.txt</span></code> files):</p>
+</li>
+<li><p class="first">Select “Initialize repository and push”, then click “Add”.</p>
+<img alt="_images/remote_add_dialog.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/remote_add_dialog.png">
+</li>
+<li><p class="first">If you get “Success” then your files have been backed up to this other folder.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="working-from-another-machine">
+<h2>Working from another machine<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#working-from-another-machine" title="Permalink to this headline">¶</a></h2>
+<p>Now you can work from any computer and send changes back to the backup copy.</p>
+<p>We can pretend to do this by making a new copy as if it was on (say) your
+laptop.  But in fact we’ll create the folder in the <code class="docutils literal"><span class="pre">C:\</span></code> drive again.</p>
+<ul>
+<li><p class="first">Right click on the <code class="docutils literal"><span class="pre">C:\</span></code> drive, choose ‘Git Gui’:</p>
+<img alt="_images/git_gui_main.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/git_gui_main.png">
+</li>
+<li><p class="first">Select “Clone existing repository”.  For the ‘Source location’, browse to the
+backup that you just made. Type <code class="docutils literal"><span class="pre">C:\laptop_working</span></code> for the target directory.  Choose
+“full copy” from the options (for safety).  Click on “Clone”.</p>
+<img alt="_images/clone_dialog.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/clone_dialog.png">
+</li>
+<li><p class="first">You now have a <code class="docutils literal"><span class="pre">c:\laptop_working</span></code> folder that is a clone of the “my_backup”
+repository, and that also has the same data as the <code class="docutils literal"><span class="pre">c:\my_idea</span></code> folder.</p>
+</li>
+<li><p class="first">Let’s make some changes on the laptop.  Go to the <code class="docutils literal"><span class="pre">c:\laptop_working</span></code>
+folder.  Make a new file <code class="docutils literal"><span class="pre">idea_on_laptop.txt</span></code> and type some text in it.
+Save.</p>
+</li>
+<li><p class="first">Right click, “Git Commit Tool”, stage the <code class="docutils literal"><span class="pre">idea_on_laptop.txt</span></code> file, add a
+commit message and click “Commit”.</p>
+<p>Now you have this contents in your <code class="docutils literal"><span class="pre">laptop_working</span></code> folder.</p>
+<img alt="_images/laptop_directory.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/laptop_directory.png">
+</li>
+</ul>
+<p>You put the changes back into the backup by doing a “Push”</p>
+<ul>
+<li><p class="first">Right click in <code class="docutils literal"><span class="pre">laptop_working</span></code>. “Git Gui”, “Remote” menu, “Push ...”</p>
+<img alt="_images/laptop_remote_menu.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/laptop_remote_menu.png">
+<p>On the next dialog, click “Push”.</p>
+<img alt="_images/laptop_push.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/laptop_push.png">
+<p>The changes go back to the <code class="docutils literal"><span class="pre">my_backup.git</span></code> repository.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="getting-changes-from-a-common-backup">
+<h2>Getting changes from a common backup<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#getting-changes-from-a-common-backup" title="Permalink to this headline">¶</a></h2>
+<p>Let’s pretend that we’ve gone back to our original computer and we want the
+changes that we pushed from the laptop.</p>
+<ul>
+<li><p class="first">Go back to the <code class="docutils literal"><span class="pre">my_idea</span></code> folder.  Notice you don’t have the
+<code class="docutils literal"><span class="pre">idea_on_laptop</span></code> file yet.</p>
+</li>
+<li><p class="first">Right click, “Git Gui”, “Remote” menu, “Fetch from” from the <code class="docutils literal"><span class="pre">my_backup</span></code>
+remote.</p>
+<img alt="_images/gg_fetch_my_idea.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/gg_fetch_my_idea.png">
+<p>Now you have the changes <em>in the repository</em> (the <code class="docutils literal"><span class="pre">.git</span></code> subdirectory)
+- but not <em>in the working tree</em>.  Specifically, we don’t have the
+<code class="docutils literal"><span class="pre">idea_on_laptop.txt</span></code> file in the folder yet:</p>
+<img alt="_images/my_idea_before_merge.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/my_idea_before_merge.png">
+<p>To get the file, we need to do a <em>merge</em>.  This brings the changes from the
+<em>repository</em> into the working tree.  Open the “Git Gui” if it is not open.
+Choose the “Merge” menu, “Local Merge” option.</p>
+<img alt="_images/local_merge.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/local_merge.png">
+<p>In the dialog, accept the
+defaults and click “Merge”:</p>
+<img alt="_images/merge_dialog.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/merge_dialog.png">
+<p>Now you have your file - and you are synchronized with the laptop.</p>
+<img alt="_images/my_idea_after_merge.png" src="./Getting started with git gui on Windows — pydagogue 0.2 documentation_files/my_idea_after_merge.png">
+</li>
+</ul>
+</div>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#review" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Code states stored so you can<ul>
+<li>See what you’ve done</li>
+<li>Go back to an earlier state if you make a mistake</li>
+<li>Send files to and from different computers</li>
+</ul>
+</li>
+<li>If you are working with someone else they can add their changes<ul>
+<li>You can see what they did, they can see what you did</li>
+<li>It’s easy to undo if one of you makes a mistake</li>
+</ul>
+</li>
+</ul>
+<p>This system is powerful, very useful and sometimes confusing.  Consult an
+expert if you get confused.  It is fairly difficult to lose data if you ask an
+expert after you have made a mistake or got confused.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="http://matthew-brett.github.io/pydagogue/index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#">Getting started with git gui on Windows</a><ul>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#install-git-for-windows">Install git for Windows</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#a-pretend-project">A pretend project</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#putting-the-project-into-version-control">Putting the project into version control</a><ul>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#initializing-the-repository">Initializing the repository</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#adding-stuff-to-the-repository">Adding stuff to the repository</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#speak-with-your-own-voice">Speak with your own voice</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#making-a-backup">Making a backup</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#working-from-another-machine">Working from another machine</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#getting-changes-from-a-common-backup">Getting changes from a common backup</a></li>
+<li><a class="reference internal" href="http://matthew-brett.github.io/pydagogue/git_gui_windows.html#review">Review</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="http://matthew-brett.github.io/pydagogue/vim_mergetool.html" title="previous chapter">Using vim as a mergetool in git</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="http://matthew-brett.github.io/pydagogue/gh_delete_master.html" title="next chapter">Deleting your master branch</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="http://matthew-brett.github.io/pydagogue/_sources/git_gui_windows.rst.txt" rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="http://matthew-brett.github.io/pydagogue/search.html" method="get">
+      <div><input type="text" name="q"></div>
+      <div><input type="submit" value="Go"></div>
+      <input type="hidden" name="check_keywords" value="yes">
+      <input type="hidden" name="area" value="default">
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="http://matthew-brett.github.io/pydagogue/genindex.html" title="General Index">index</a></li>
+        <li class="right">
+          <a href="http://matthew-brett.github.io/pydagogue/gh_delete_master.html" title="Deleting your master branch">next</a> |</li>
+        <li class="right">
+          <a href="http://matthew-brett.github.io/pydagogue/vim_mergetool.html" title="Using vim as a mergetool in git">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="http://matthew-brett.github.io/pydagogue/index.html">pydagogue 0.2 documentation</a> »</li>
+          <li class="nav-item nav-item-1"><a href="http://matthew-brett.github.io/pydagogue/git.html">Notes and tutorials on git</a> »</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        © Copyright 2009-2016 - Matthew Brett.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.1.
+    </div>
+  
+<div id="weava-permanent-marker" date="1535304781919"></div><div id="weava-ui-wrapper"><div class="weava-drop-area-wrapper"><div class="weava-drop-area"></div>
+<div class="weava-drop-area-text">Drop here!</div></div></div></body></html>
